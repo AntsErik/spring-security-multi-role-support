@@ -1,7 +1,11 @@
 package ee.praktika.springsecurity.demo.entity;
 
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
+
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -52,6 +56,10 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.roles = roles;
+	}
+
+	public User(String userName2, String encodedPassword, List<GrantedAuthority> authorities) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Long getId() {
