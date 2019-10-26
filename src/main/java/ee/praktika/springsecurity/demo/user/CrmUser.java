@@ -10,6 +10,8 @@ import ee.praktika.springsecurity.demo.validation.ValidEmail;
     @FieldMatch(first = "password", second = "matchingPassword", message = "The password fields must match")
 })
 public class CrmUser {
+	
+	private String formRole;
 
 	@NotNull(message = "is required")
 	@Size(min = 1, message = "is required")
@@ -39,6 +41,14 @@ public class CrmUser {
 	public CrmUser() {
 
 	}
+	
+	public String getFormRole() {
+		return formRole;
+		}
+	
+	public void setFormRole(String formRole) {
+		this.formRole = formRole;
+		}
 
 	public String getUserName() {
 		return userName;
